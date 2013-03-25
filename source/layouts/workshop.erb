@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js updated" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width" />
+  <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+
+  <title><%= workshop.title %> - <%= workshop.dates %></title>
+  <meta name="description" content="A two-day programming workshop for journalists in <%= workshop.geographic %>">
+  <meta name="keywords" content="Code with me, programming, coding, journalists, journalism workshop, HTML, CSS, jQuery">
+  <meta name="author" content="Tom Giratikanon and Sisi Wei">
+
+  <%= stylesheet_link_tag "all" %>
+  <%= javascript_include_tag  "all" %>
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="//use.typekit.net/wbz0zag.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+      
+</head>
+<body>
+
+  <div class="row eventinfo">
+    <div class="two columns overline"><a href="http://codewithme.us">Code with me</a></div>
+    <div class="five columns overline">A two-day programming workshop</div>
+    <div class="three columns overline"><%= workshop.dates %></div>
+    <div class="two columns overline"><%= workshop.geographic %></div>
+ </div>
+
+  <div class="row header">
+    <div class="seven columns">
+       <h1 class="logo logo-new"><%= workshop.title %></h1>
+    </div>
+    <div class="five columns">
+        <ul class="no-bullet">
+            <!-- <li class="last"><a href="register.shtml">Register</a></li> -->
+            <li class="last"><a href="resources.shtml">Resources</a></li>
+            <li><a href="exercises.shtml">Exercises</a></li>
+            <li><a href="faq.shtml">FAQ</a></li>
+            <li class="last"><a href="mentors.shtml">Mentors</a></li>
+        </ul>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <%= yield %>
+
+  <!-- Footer -->
+  <footer>
+    Founded by <a href="http://www.twitter.com/sisiwei">Sisi Wei</a> & <a href="http://www.tgirat.com/">Tom Giratikanon</a> /  Site by <a href="http://www.twitter.com/kuanluo">Kuan Luo</a> / Together with &#009825
+  </footer>
+
+  <%= javascript_include_tag  "analytics" %>
+
+</body>
+</html>

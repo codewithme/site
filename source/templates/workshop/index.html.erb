@@ -1,0 +1,52 @@
+<div class="row">
+     <div class="nine columns intro-content">
+        <h2>A workshop for beginners</h2>
+        <p>
+            <strong>You want to learn how to code</strong>, but the newsroom always needs you to do something else instead. Maybe you've even tried learning on your own, but it's hard without someone there to help. At  <em>Code with me</em>, a two-day workshop, we'll teach you how to code from the ground up so you can tell meaningful, interactive stories. 
+        </p>
+        <p>
+            We're specifically designed for <strong>journalists without coding experience</strong>. With one mentor for every two students, you'll always have the attention of a dedicated teacher so you can learn at your own pace, and never feel lost or behind. With nine mentors total, you'll join a supportive learning community that will continue on after the workshop.
+        </p>
+        <p>
+            Plus, you'll have fun. You'll <strong>learn HTML, CSS and Javascript</strong> by building your own interactive project. Our goal is to make this your turning point &mdash; an experience that not only teaches the basics of code, but gives you the skills and confidence you need to keep programming on your own and in your newsroom.
+        </p>
+        <p>
+            <a href="register.shtml" class="big button">Registration and wait list are closed.</a>
+        </p>
+     </div>   
+
+ <div class="three columns workshop-section">
+      
+        <h2 class="workshop-header">Details</h2>
+          <div class="confinfo">
+             <strong>Registration and wait list now closed</strong>
+            <p>
+                Stay in touch by <a href="https://groups.google.com/forum/?fromgroups#!forum/codewithme">joining our listserv</a>
+            </p>
+          </div>
+          <div class="confinfo">
+            <strong>Program dates</strong>
+            <p>
+                <%= workshop.dates %>
+                <br/><%= workshop.hours %>
+            </p>
+          </div>
+          <div class="confinfo">
+            <strong>Venue </strong> 
+            <p>
+                <a href="<%= workshop.venue_link %>"><%= workshop.venue %></a>
+                <br /><%= workshop.address.gsub('\n', '<br />') %>
+            <p>
+          </div>
+          <div class="confinfo">
+            <strong>Cost</strong> 
+            <br /><%= workshop.cost %>
+          </div>
+          
+        <h4 class="sponsor-header">Special thanks</h4>
+        <% for sponsor in workshop.sponsors %>
+          <a href="<%= sponsor.url %>"><img class="sponsor-image" src="<%= sponsor.image %>"></a>
+        <% end %>
+        
+  </div>
+  </div>

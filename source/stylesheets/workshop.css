@@ -1,0 +1,369 @@
+/* Artfully masterminded by ZURB 
+    Gracefully modified by Kuan Luo, Sisi Wei and Tom Giratikanon
+ */
+
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Home
+:: Mentors
+:: FAQ
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+a {
+color: #32B09B;
+text-decoration: none;
+line-height: inherit;
+}
+
+.logo {
+
+color: #32B09B;
+}
+
+body {
+    margin: 0;
+    padding: 1em;
+    background-color: #F3F1DC;
+    border: 0.8em solid  #D8D4AF;
+    font-family: "omnes-pro", Arial, sans-serif;
+    font-size-adjust: 0.508;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+img { border: none; }
+
+@media only screen and (max-width:768px) {
+    body {
+        margin: 0;
+        padding: 0.5em;
+        border: none;
+        background-color: #F3F1DC;
+        font-family: "omnes-pro" sans-serif;
+        font-size-adjust: 0.508;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    
+    .header .four.columns {
+        padding-left: 10px;
+    }
+    
+    li {
+        margin-top: 0px !important;
+    }
+
+} 
+
+.header {
+    margin-top: 4%;
+    margin-bottom: 1%;
+}
+
+@media only screen and (max-width:500px) {
+        .header {
+        margin: 15px auto 30px;
+        }
+} 
+
+.logo {
+    color: #32B09B;
+}
+
+.button {
+    background-color: #32B09B
+}
+
+
+.logo-new {
+    font-family: 'Pacifico', cursive;
+}
+
+#code {
+    font-family: "alternate-gothic-no-3-d", "omnes-pro", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85%;
+    float: left;
+    margin-right: 12px;
+}
+
+#withme {
+    font-family: "Bistro-Script-Web" "omnes-pro" sans-serif;
+    font-size: 80%;
+}
+
+
+.no-bullet li {
+    display: inline;
+    float: right;
+    margin-right: 0px;
+    vertical-align: bottom;
+    margin-top: 30px;
+    font-family: "omnes-pro", sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+    
+
+li.last {
+    margin-right: none;
+}
+
+
+li a {
+    padding: 6px;
+}
+
+li a:hover { 
+    color: white; 
+    background:  #00B29E;
+    padding: 6px;
+}
+
+ul {
+    padding-left: 10px;
+}
+
+@media only screen and (max-width:1000px) {
+        li {
+        margin-right: 2%;
+        font-size: 18px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        }
+        
+        li a:hover { 
+        color: #009483; 
+        /* margin: 40px 2% 20px 0px; */
+        padding: 6px;
+        background: none;       
+}
+
+} 
+
+@media only screen and (max-width:500px) {
+        li {
+        margin-right: 8%;
+        font-size: 18px;        
+        margin-bottom: 0;
+        margin-top:0px;
+        }
+} 
+
+.eventinfo {
+    /* border-top-style: solid;
+    border-top-width: 4px;
+    border-top-color: #1b1b1b; */
+    margin-top: 10px;
+    border-bottom: 1px solid #C7C2A1;
+    color: #B0AD8F;
+    
+}
+
+
+.eventinfo p,
+.eventinfo .overline {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 30px;
+
+}
+@media only screen and (max-width:1000px) {
+    .eventinfo {
+    display: none;
+    }
+} 
+
+@media only screen and (max-width: 767px)
+
+
+
+b {
+font-family: "omnes-pro",sans-serif;
+font-style: normal;
+font-weight: 500;
+}
+
+span.strong{
+    font-family: "omnes-pro",sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    margin: 30px 10% 20px;
+    color: #505050;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 21px;
+}
+
+
+
+/* -----------------------------------------
+  Home
+----------------------------------------- */
+
+.intro-content {
+    /*margin-top: 14px;*/
+}
+
+.intro,
+.updated .intro-content p {
+    font-size: 21px;
+    line-height: 1.6em;
+    font-weight: 300;
+    padding-right: 20px;
+}
+
+
+.intro-content p {
+    font-size: 21px;
+    }
+
+.intro b {
+    font-weight: 600;
+}
+
+    @media only screen and (max-width:500px) {
+    .intro {
+    font-size: 1.4em;
+    line-height: 1.6em;
+    }
+} 
+
+.intromobile {
+    display: none;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+@media only screen and (max-width:768px) {
+    .intromobile {
+        display: block;
+    }
+}
+
+.sponsor-header {
+    margin-top: 28px;
+}
+    
+    
+/* -----------------------------------------
+    Mentors   
+----------------------------------------- */
+
+
+.name {
+    color:  #1b1b1b;
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.title {
+    text-align: center;
+    font-size: 14px;
+    margin-top: -15px;
+}
+.work {
+    font-size: 14px;    
+    font-style: italic;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.work a {
+    color: black;
+}
+
+#mentors img {
+    border-radius: 15px;
+    width: 206px;
+}
+
+p.title, p.work {
+    line-height: 18px;
+    padding-bottom: 8px;
+}
+
+/* -----------------------------------------
+   FAQ
+----------------------------------------- */
+
+h4, .updated h2 {
+    font-family: "alternate-gothic-no-3-d", "omnes-pro", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    color: #C7C2A1;
+}
+    
+h2 {
+    font-size: 26px;
+}
+
+
+
+.question {
+    color:  #00B29E;
+    font-size: 18px;
+}
+
+.answer {
+    margin-top: -15px;
+    font-size: 18px;    
+}
+
+.confinfo,
+.confinfo p {
+    font-size: 18px;
+    margin-bottom: 14px;
+/*  line-height: 1.3; */
+}
+
+.answer-list li {
+    font-size: 18px;
+}
+
+.getintouch {
+    font-size: 18px;
+}
+
+b.boldinfaq,
+strong {
+    font-weight: 600;
+
+}
+
+/* -----------------------------------------
+   RESOURCES
+----------------------------------------- */
+
+.section {
+    margin: 0 0 30px 0;
+}
+
+.documentation p {
+    font-size: 16px;
+}
+
+.documentation h4 {
+    margin-bottom: 0px;
+}
+
+#registration-questions li span {
+    font-size: 18px;
+}

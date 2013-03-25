@@ -1,0 +1,26 @@
+ <!-- FAQ & Contact  -->
+ <div class="row">
+
+     <div class="nine columns" style="padding-right: 30px">
+    	
+    	<h4>Frequently asked questions</h4>
+
+		<% for section in workshop.faqs %>
+			<div class="section">
+				<div class="question"><%= section.question %></div>
+				<div class="answer"><%= section.answer %></div>
+			</div>
+		<% end %>
+		
+	</div>
+
+   <div class="three columns">
+	    <h4>Get in touch</h4>
+		<p class="getintouch">		
+			Email us <br/><a href="mailto:codewithme.team@gmail.com">codewithme.team@gmail.com</a> 
+			<br/><br/>Tweet at us <br/><a href="http://www.twitter.com/codewithme">@codewithme</a>
+			<br/><br/>Join our listserv<br/><a href="https://groups.google.com/forum/?fromgroups#!forum/codewithme">codewithme</a>
+		</p>
+   </div>   
+      
+</div>
