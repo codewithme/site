@@ -61,8 +61,8 @@ img { border: none; }
 } 
 
 .header {
-    margin-top: 4%;
-    margin-bottom: 1%;
+    margin-top: 4em;
+    margin-bottom: .5em;
 }
 
 @media only screen and (max-width:500px) {
@@ -82,6 +82,7 @@ img { border: none; }
 
 .logo-new {
     font-family: 'Pacifico', cursive;
+    margin-bottom: 6px;
 }
 
 #code {
@@ -156,14 +157,21 @@ ul {
         }
 } 
 
+header {
+    margin: 0 0 2em 0;
+}
+
 .eventinfo {
     /* border-top-style: solid;
     border-top-width: 4px;
     border-top-color: #1b1b1b; */
-    margin-top: 10px;
-    border-bottom: 1px solid #C7C2A1;
-    color: #B0AD8F;
-    
+    margin: 0 15px;
+    padding: 10px 0;
+    border: 1px solid #C7C2A1;
+    border-width: 1px 0 0;
+    color: #333;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 
@@ -313,6 +321,14 @@ h4, .updated h2 {
     
 h2 {
     font-size: 26px;
+}
+
+.header h2 {
+    color: #00B39E;
+    font-size: 18px;
+    font-weight: 300px;
+    font-family: "omnes-pro", sans-serif;
+    margin-top: 10px;
 }
 
 

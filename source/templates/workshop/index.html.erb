@@ -16,6 +16,19 @@
      </div>   
 
  <div class="three columns workshop-section">
+
+        <section>
+          <h2 class="sponsor-header">Sponsors</h2>
+          <% for sponsor in workshop.sponsors %>
+            <a href="<%= sponsor.url %>"><img class="sponsor-image" src="<%= sponsor.image %>"></a>
+            <p><%= sponsor.role %></p>
+          <% end %>
+        </section>
+
+        <section>
+
+
+        </section>
       
         <h2 class="workshop-header">Details</h2>
           <div class="confinfo">
@@ -43,10 +56,7 @@
             <br /><%= workshop.cost %>
           </div>
           
-        <h4 class="sponsor-header">Special thanks</h4>
-        <% for sponsor in workshop.sponsors %>
-          <a href="<%= sponsor.url %>"><img class="sponsor-image" src="<%= sponsor.image %>"></a>
-        <% end %>
+        
         
   </div>
   </div>

@@ -28,27 +28,38 @@
 </head>
 <body>
 
-  <div class="row eventinfo">
+ <!--  <div class="row eventinfo">
     <div class="two columns overline"><a href="http://codewithme.us">Code with me</a></div>
     <div class="five columns overline">A two-day programming workshop</div>
     <div class="three columns overline"><%= workshop.dates %></div>
     <div class="two columns overline"><%= workshop.geographic %></div>
- </div>
+ </div> -->
 
-  <div class="row header">
-    <div class="seven columns">
-       <h1 class="logo logo-new"><%= workshop.title %></h1>
+  <header>
+
+    <div class="row header">
+      <div class="seven columns">
+         <h1 class="logo logo-new"><%= workshop.title %></h1>
+      </div>
+      <div class="five columns">
+          <ul class="no-bullet">
+              <!-- <li class="last"><a href="register.shtml">Register</a></li> -->
+              <li class="last"><a href="resources.shtml">Resources</a></li>
+              <li><a href="exercises.shtml">Exercises</a></li>
+              <li><a href="faq.shtml">FAQ</a></li>
+              <li class="last"><a href="mentors.shtml">Mentors</a></li>
+          </ul>
+      </div>
     </div>
-    <div class="five columns">
-        <ul class="no-bullet">
-            <!-- <li class="last"><a href="register.shtml">Register</a></li> -->
-            <li class="last"><a href="resources.shtml">Resources</a></li>
-            <li><a href="exercises.shtml">Exercises</a></li>
-            <li><a href="faq.shtml">FAQ</a></li>
-            <li class="last"><a href="mentors.shtml">Mentors</a></li>
-        </ul>
+
+    <div class="row">
+      <div class="twelve columns eventinfo">
+         <%= workshop.dates %>&nbsp; &middot; &nbsp;<%= workshop.hours %>&nbsp; &middot; &nbsp;<%= workshop.venue %>
+      </div>
     </div>
-  </div>
+
+  </header>
+
 
   <!-- Page Content -->
   <%= yield %>
