@@ -16,6 +16,7 @@
    Shared Styles
 ----------------------------------------- */
 
+
 a {
 color: #32B09B;
 text-decoration: none;
@@ -24,7 +25,15 @@ line-height: inherit;
 
 .logo {
 
-color: #32B09B;
+    color: #32B09B;
+}
+
+.logo span {
+    font-family: "omnes-pro", Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    display:  inline-block;
+    margin-left:  .5em;
 }
 
 body {
@@ -109,6 +118,10 @@ img { border: none; }
     font-family: "omnes-pro", sans-serif;
     font-size: 1.4em;
     font-weight: 600;
+}
+
+.navigation {
+    border-top: 1px solid #D8D4AF;
 }
     
 
@@ -383,3 +396,8 @@ strong {
 #registration-questions li span {
     font-size: 18px;
 }
+/*
+
+
+ */
+

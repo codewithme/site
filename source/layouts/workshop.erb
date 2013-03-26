@@ -38,23 +38,34 @@
   <header>
 
     <div class="row header">
-      <div class="seven columns">
-         <h1 class="logo logo-new"><%= workshop.title %></h1>
+      <div class="twelve columns">
+         <h1 class="logo logo-new">
+          <%= workshop.title %>
+          <span><%= workshop.dates %></span>
+         </h1>
       </div>
       <div class="five columns">
-          <ul class="no-bullet">
-              <!-- <li class="last"><a href="register.shtml">Register</a></li> -->
+          <!-- <ul class="no-bullet">
+              <li class="last"><a href="register.shtml">Register</a></li> 
               <li class="last"><a href="resources.shtml">Resources</a></li>
               <li><a href="exercises.shtml">Exercises</a></li>
               <li><a href="faq.shtml">FAQ</a></li>
               <li class="last"><a href="mentors.shtml">Mentors</a></li>
-          </ul>
+          </ul> -->
+
       </div>
     </div>
 
-    <div class="row">
-      <div class="twelve columns eventinfo">
-         <%= workshop.dates %>&nbsp; &middot; &nbsp;<%= workshop.hours %>&nbsp; &middot; &nbsp;<%= workshop.venue %>
+    <div class="row navigation">
+      <div class="twelve columns">
+        <ul class="no-bullet">
+            <li class="last"><a href="register.shtml">Register</a></li> 
+            <li class="last"><a href="resources.shtml">Resources</a></li>
+            <li><a href="exercises.shtml">Exercises</a></li>
+            <li><a href="faq.shtml">FAQ</a></li>
+            <li class="last"><a href="mentors.shtml">Mentors</a></li>
+        </ul>
+         <!-- <%= workshop.dates %>&nbsp; &middot; &nbsp;<%= workshop.hours %>&nbsp; &middot; &nbsp;<%= workshop.venue %> -->
       </div>
     </div>
 
