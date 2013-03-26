@@ -23,6 +23,7 @@
 :: Home
 :: Mentors
 :: FAQ
+:: Schedule
 */
 
 
@@ -380,13 +381,43 @@ strong {
 #registration-questions li span {
     font-size: 18px;
 }
-/*
 
 
- */
+/* -----------------------------------------
+   SCHEDULE
+----------------------------------------- */
 
-/*
+table, 
+table thead, 
+table thead tr th, 
+table tfoot tr td, 
+table tbody tr td,
+table tfoot,
+td,
+tr,
+table tbody tr:nth-child(even)  {
+    background-color: transparent;
+    border: 0;
+    font-weight: 300;
+    font-size: 21px;
+}
 
+table thead tr th {
+    padding: 0 0 21px 0;
+    font-weight: 500;
+}
 
- */
+.schedule-label {
+    padding: 0 15px 21px 0; 
+}
+
+.schedule-description {
+    padding: 0 0px 21px 0;
+}
+
+table {
+    width: 400px;
+    float: left;
+}
+
 
