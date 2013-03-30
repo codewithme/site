@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js updated" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <title>Code with me: Coding for journalists</title>
+  <link rel="shortcut icon" type="image/ico" href="favicon-codewithme.ico">
+  <meta name="description" content="A series of two-day programming workshop for journalists in the U.S.">
+  <meta name="keywords" content="Code with me, programming, coding, journalists, journalism workshop, HTML, CSS, jQuery">
+  <meta name="author" content="Tom Giratikanon and Sisi Wei">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <%= stylesheet_link_tag "main" %>
+  <%= javascript_include_tag  "all" %>
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="//use.typekit.net/wbz0zag.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+<body class="<%= current_page.data.page_type %>">
+
+  <header>
+
+    <% if current_page.data.page_type == "homepage" then %>
+      <div class="row title-row">
+        <div class="eight columns offset-by-two">
+          <h1 class="logo">Code with me</h1> 
+        </div>
+      </div>
+    <% else %>
+      <div class="row title-row">
+        <div class="eight columns offset-by-two">
+            <h2 class="logo"><a href="/">Code with me</a></h2>   
+            <h1><%= current_page.data.title %></h1>
+        </div>
+      </div>
+    <% end %>
+  </header>
+
+  
+  <!-- Page Content -->
+  <%= yield %>
+
+  <!-- Footer -->
+  <div class="row">
+    <footer class="eight columns offset-by-two">
+      Founded by <a href="http://www.twitter.com/sisiwei">Sisi Wei</a> & <a href="http://www.tgirat.com/">Tom Giratikanon</a> /  Design concept by <a href="http://www.twitter.com/kuanluo">Kuan Luo</a> <br /> Together with &#009825
+    </footer>
+  </div>
+
+  <%= javascript_include_tag  "analytics" %>
+
+</body>
+</html>
