@@ -3,63 +3,22 @@
    <div class="nine columns intro-content">
       <h2>A workshop for beginners</h2>
       <p>
-          <strong>You want to learn how to code</strong>, but the newsroom always needs you to do something else instead. Maybe you've even tried learning on your own, but it's hard without someone there to help. At  <em>Code with me</em>, a two-day workshop, we'll teach you how to code from the ground up so you can tell meaningful, interactive stories. 
+        <strong>Learn to code with a mentor by your side</strong>. You've wanted to learn how to program, but the newsroom always needs you to do something else instead. Maybe you've even tried on your own, but it's hard without someone there to help. At  <em>Code with me</em>, a two-day workshop, we'll teach you how to code from the ground up so you can tell meaningful, interactive stories. 
       </p>
       <p>
-          We're specifically designed for <strong>journalists without coding experience</strong>. With one mentor for every two students, you'll always have the attention of a dedicated teacher so you can learn at your own pace, and never feel lost or behind. With <%= workshop.mentors_cardinal %> mentors total, you'll join a supportive learning community that will continue on after the workshop.
+          We're designed for <strong>journalists without coding experience</strong>. With one mentor for every two students, you'll always have the attention of a dedicated teacher so you can learn at your own pace, and never feel lost. With <%= workshop.mentors_cardinal %> mentors total, you'll join a supportive learning community that will continue on after the workshop.
       </p>
       <p>
           Plus, you'll have fun. You'll <strong>learn HTML, CSS and Javascript</strong> by building your own interactive project. Our goal is to make this your turning point &mdash; an experience that not only teaches the basics of code, but gives you the skills and confidence you need to keep programming on your own and in your newsroom.
       </p>
       <p><em><%= workshop.organized_with %></em></p>
-   </div>   
 
-   <div class="three columns workshop-section">
+      <h2>About the program</h2>
+      <p>
+          <em>Code with me</em> is a series of programming workshops for journalists across the United States. Learn more <a href="/index.html">about us and see our past workshops</a>.
+      </p>
+  </div>   
 
-    <section>
-      <h2>Details</h2>
-
-      <div class="confinfo">
-        <% if workshop.applications.status == "open" %>
-          <a href="apply.html" class="button">Apply now</a>
-        <% end %>
-        <p><strong>Deadline</strong>: <%= workshop.applications.deadline %></p>
-        <p><strong>Workshop cost</strong>: $85</p>
-        <p>
-          <strong>Venue</strong>: <a href="<%= workshop.venue_link %>" target="_blank"><%= workshop.venue %></a>
-          <%= workshop.address %>
-        </p>
-      </div>
-
-      <!-- <div class="confinfo">
-        <strong>Venue </strong> 
-        <p>
-            <a href="<%= workshop.venue_link %>"><%= workshop.venue %></a>
-            <br /><%= workshop.address.gsub('\n', '<br />') %>
-        <p>
-      </div> -->
-     <!--  <div class="confinfo">
-        <strong>Workshop cost</strong> 
-        <p><%= workshop.cost %></p>
-      </div> -->
-    </section>
-    
-    <section class="sponsors">
-      <h2>Sponsors</h2>
-      <div class="sponsor-list">
-        <% for sponsor in workshop.sponsors %>
-          <div class="sponsor">
-            <a href="<%= sponsor.url %>"><%= image_tag sponsor.image, :class => 'sponsor-logo' %></a>
-            <p><%= sponsor.role %></p>
-          </div>
-        <% end %>
-
-      </div>
-    </section>
-
-    <section>
-    </section>
-        
-  </div>
+  <%= partial( :sidebar, :locals => { :workshop => workshop, :show_apply => true }) %>        
 
 </div>

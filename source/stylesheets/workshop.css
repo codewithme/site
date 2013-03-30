@@ -20,7 +20,6 @@
  *= require global
  */
 
-
 /* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
@@ -37,6 +36,7 @@
 ----------------------------------------- */
 
 
+
 body {
     margin: 0;
     padding: 1em;
@@ -48,7 +48,8 @@ body {
 }
 
 p {
-    font-size: 18px;
+    font-size: 21px;
+    font-weight: 300;
 }
 
 img { 
@@ -63,6 +64,7 @@ a {
 
     a:hover { 
         /*color: black;*/
+        color: #32B09B;
         text-decoration: underline;
     }
 
@@ -79,19 +81,23 @@ header {
     }
 
         h1 {
-            font-size: 48px;
+            font-size: 46px;
             color: #32B09B;
             font-family: 'Pacifico', cursive;
             margin-bottom: 6px;
             font-weight: 400;
         }
 
+            h1 a {
+                margin-right: 0.3em;
+            }
+
             h1 span {
                 font-family: "omnes-pro", Arial, sans-serif;
-                font-size: 25px;
+                font-size: 23px;
                 font-weight: 300;
                 display:  inline-block;
-                margin-left:  .5em;
+                /*margin-left:  .5em;*/
                 color:  #666;
             }
 
@@ -107,6 +113,8 @@ nav .columns {
 
     nav ul {
         margin-top: 6px;
+        margin-bottom: 0;
+        margin-left: 0;
     }
 
         nav ul li {
@@ -115,14 +123,18 @@ nav .columns {
             vertical-align: bottom;
             margin-top: 5px;
             font-family: "omnes-pro", sans-serif;
-            font-size: 1.3em;
+            font-size: 1.35em;
             font-weight: 600;
-            padding: 6px 18px 6px 0;
+            padding: 6px 20px 6px 0;
         } 
 
         .action {
             background-color: 
         }
+
+    .right-nav {
+        float: right;
+    }
 
             
 
@@ -148,57 +160,8 @@ footer {
 
 
 @media only screen and (max-width:768px) {
-    body {
-        margin: 0;
-        padding: 0.5em;
-        border: none;
-        background-color: #F3F1DC;
-        font-family: "omnes-pro" sans-serif;
-        font-size-adjust: 0.508;
-        -webkit-font-smoothing: antialiased !important;
-    }
-    
-    .header .four.columns {
-        padding-left: 10px;
-    }
-    
-    li {
-        margin-top: 0px !important;
-    }
 
 } 
-@media only screen and (max-width:500px) {
-        .header {
-        margin: 15px auto 30px;
-        }
-} 
-
-
-@media only screen and (max-width:1000px) {
-        li {
-        margin-right: 2%;
-        font-size: 18px;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        }
-        
-        li a:hover { 
-            color: #009483; 
-            padding: 6px;
-            background: none;       
-    }
-
-} 
-
-@media only screen and (max-width:500px) {
-        li {
-        margin-right: 8%;
-        font-size: 18px;        
-        margin-bottom: 0;
-        margin-top:0px;
-        }
-} 
-
 
 
 
@@ -212,17 +175,12 @@ footer {
 }
 
 .intro,
-.updated .intro-content p {
+.intro-content p {
     font-size: 21px;
     line-height: 1.6em;
     font-weight: 300;
     padding-right: 20px;
 }
-
-
-.intro-content p {
-    font-size: 21px;
-    }
 
 .intro b {
     font-weight: 600;
@@ -277,6 +235,16 @@ footer {
         color: #444;
         margin: 0;
     }
+
+
+/* -----------------------------------------
+    Apply   
+----------------------------------------- */
+
+.applications iframe {
+    border: 1px solid #d8d4af;
+}
+
     
 /* -----------------------------------------
     Mentors   
@@ -321,7 +289,7 @@ p.title, p.work {
    FAQ
 ----------------------------------------- */
 
-h4, .updated h2 {
+h4, h2 {
     font-family: "alternate-gothic-no-3-d", "omnes-pro", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -354,15 +322,15 @@ h2 {
 
 .question p,
 .answer p {
-    font-size: 18px;
+    font-size: 21px;
 }
 
 .question p {
     margin-bottom: 5px;
 }
 
-.answer ul {
-    margin-left: 20px;
+ul {
+    margin-left: 30px;
 }
 
 .confinfo,
@@ -379,11 +347,12 @@ h2 {
 }
 
 .answer-list li {
-    font-size: 18px;
+    font-size: 21px;
+    font-weight: 300;
 }
 
 .getintouch {
-    font-size: 18px;
+    font-size: 21px;
 }
 
 b.boldinfaq,
@@ -433,7 +402,7 @@ table tbody tr:nth-child(even)  {
 }
 
 table thead tr th {
-    padding: 0 0 21px 0;
+    padding: 0 0 0px 0;
     font-weight: 500;
 }
 
@@ -451,3 +420,39 @@ table {
 }
 
 
+/* -----------------------------------------
+   RESPONSIVE DESIGN
+----------------------------------------- */
+
+@media only screen and (max-width:500px) {
+    body {
+        border-width: 0.8em 0;
+        padding: 0;
+    }
+    header {
+        margin: 0.5em 0
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 1;
+    }
+
+    h1 span {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    nav ul li {
+        font-size: 1.1em;
+        padding-right: 10px;
+    }
+
+    p,
+    .intro-content p {
+        font-size: 18px;
+    }
+} 

@@ -1,11 +1,22 @@
-<div class="row">
+<div class="row applications">
 
-   <div class="twelve columns">
+   <div class="nine columns">
 
-        <p>Applications are due <%= workshop.applications.deadline %>. If you're accepted, we will e-mail and call you starting on <%= workshop.applications.notification %>. You'll have TK hours to pay and register. We  will e-mail you if you're added to our waitlist instead.</p>
+        <h2>Applications</h2>
 
-        <iframe onLoad="window.scrollTo(0,0);" src="<%= workshop.applications.form %>" width="100%" height="1900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        <p><strong>Apply now for <%= workshop.title %></strong>! <%= workshop.applications.geography %> </p>
+
+        <p>Applications are <strong>due <%= workshop.applications.deadline %></strong>, and you'll be notified by <%= workshop.applications.notification %>. You only have to register and pay once you're accepted. We accept students based on the following:</p>
+          <ul class="answer-list">
+            <li>You must be a journalist or a student studying journalism</li>
+            <li>You must have little or no coding experience. If you've used HTML, CSS and JavaScript before, you're probably too advanced</li>
+            <li>We prefer those who will actively use these skills in  service of journalism</li>
+          </ul>
+        <p><a href="mailto:team@codewithme.us">E-mail us</a> if you have any questions!</p>
+        <iframe onLoad="window.scrollTo(0,0);" src="<%= workshop.applications.form %>" width="100%" height="2000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
     </div>
+
+    <%= partial( :sidebar, :locals => { :workshop => workshop, :show_apply => false }) %>
 
 </div>

@@ -7,7 +7,7 @@
   <meta charset="utf-8" />
 
   <meta name="viewport" content="width=device-width" />
-  <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+  <link rel="shortcut icon" type="image/ico" href="http://codewithme.us/favicon-codewithme.ico">
 
   <title><%= workshop.title %> - <%= workshop.dates %></title>
   <meta name="description" content="A two-day programming workshop for journalists in <%= workshop.geographic %>">
@@ -28,13 +28,17 @@
 </head>
 <body>
 
+ <!--  <div class="fixie">
+    <div class="logo">Code with me</div>
+  </div> -->
+
   <header>
 
     <div class="row title-row">
       <div class="twelve columns">
          <h1>
           <a href="index.html"><%= workshop.title %></a>
-          <span><%= workshop.dates %>&nbsp; &middot &nbsp;<%= workshop.hours %></span> 
+          <span><%= workshop.dates %>&nbsp; &middot &nbsp;<%= workshop.hours %>&nbsp; &middot &nbsp;<%= workshop.geographic %></span> 
          </h1>
       </div>
       <div class="five columns">
@@ -47,12 +51,14 @@
         <ul class="no-bullet">
               <li class="action"><a href="apply.html">Apply</a></li> 
               <li><a href="faq.html">FAQ</a></li>
-              <li><a href="mentors.html">Mentors</a></li>
               <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="mentors.html">Mentors</a></li>
+              <!-- <li><a href="/index.html">Past workshops</a></li> -->
               <li><a href="contact.html">Contact</a></li>
               <!-- <li><a href="exercises.html">Exercises</a></li> -->
               <!-- <li><a href="resources.html">Resources</a></li> -->
-          </ul>
+        </ul>
+
       </div>
     </nav>
 

@@ -1,21 +1,27 @@
 <div class="row">
-	<% for day in workshop.schedule %>
 
-	<table>
-		<thead>
-			<tr>
-				<th colspan=2><%= day.day %></th>
-			</tr>
-		</thead>
-		<tbody> <!-- Intro to HTML, CSS and Javascript -->
-			<% for session in day.sessions %>
-			<tr>
-				<td class="schedule-label"><%= session.time %></td>
-				<td class="schedule-description"><%= session.title %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
 
-	<% end %>
+	<div class="twelve columns schedule">
+		<p>We often adjust our schedule based on our students' interests and needs.</p>
+		<% for day in workshop.schedule %>
+			<table class="day">
+				<thead>
+					<tr>
+						<th colspan=2><h2><%= day.day %></h2></th>
+					</tr>
+				</thead>
+				<tbody> <!-- Intro to HTML, CSS and Javascript -->
+					<% for session in day.sessions %>
+					<tr>
+						<td class="schedule-label"><%= session.time %></td>
+						<td class="schedule-description"><%= session.title %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		<% end %>
+	</div>
+
+	 
+
 </div>
