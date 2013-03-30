@@ -12,6 +12,9 @@ test/tmp
 test/version_tmp
 tmp
 build
+data/workshops
+config.rb
+source/images/
 
 # YARD artifacts
 .yardoc
