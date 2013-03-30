@@ -1,3 +1,9 @@
+/*
+ *= require normalize
+ *= require foundation.min
+ */
+
+
 html {
     height: 100%;
 }

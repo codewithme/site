@@ -25,7 +25,10 @@
         <% end %>
         <p><strong>Deadline</strong>: <%= workshop.applications.deadline %></p>
         <p><strong>Workshop cost</strong>: $85</p>
-        <p><strong>Venue</strong>: <a href="<%= workshop.venue_link %>" target="_blank"><%= workshop.venue %></a></p>
+        <p>
+          <strong>Venue</strong>: <a href="<%= workshop.venue_link %>" target="_blank"><%= workshop.venue %></a>
+          <%= workshop.address %>
+        </p>
       </div>
 
       <!-- <div class="confinfo">

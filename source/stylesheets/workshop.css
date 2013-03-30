@@ -16,6 +16,11 @@
 
  */
 
+/*
+ *= require global
+ */
+
+
 /* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
@@ -66,12 +71,11 @@ a {
  */
 
 header {
-    margin: 0 0 2em 0;
+    margin: 2.5em 0 2em 0;
 }
 
     .title-row {
-        margin-top: 4em;
-        margin-bottom: .5em;
+        margin-bottom: .4em;
     }
 
         h1 {

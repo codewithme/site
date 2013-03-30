@@ -14,7 +14,7 @@
   <meta name="keywords" content="Code with me, programming, coding, journalists, journalism workshop, HTML, CSS, jQuery">
   <meta name="author" content="Tom Giratikanon and Sisi Wei">
 
-  <%= stylesheet_link_tag "all" %>
+  <%= stylesheet_link_tag "workshop" %>
   <%= javascript_include_tag  "all" %>
   <!--[if lt IE 9]>
     <link rel="stylesheet" href="stylesheets/ie.css">
@@ -34,7 +34,7 @@
       <div class="twelve columns">
          <h1>
           <a href="index.html"><%= workshop.title %></a>
-          <span><%= workshop.dates %>&nbsp; &middot &nbsp;<%= workshop.geographic %></span> 
+          <span><%= workshop.dates %>&nbsp; &middot &nbsp;<%= workshop.hours %></span> 
          </h1>
       </div>
       <div class="five columns">
@@ -49,6 +49,7 @@
               <li><a href="faq.html">FAQ</a></li>
               <li><a href="mentors.html">Mentors</a></li>
               <li><a href="schedule.html">Schedule</a></li>
+              <li><a href="contact.html">Contact</a></li>
               <!-- <li><a href="exercises.html">Exercises</a></li> -->
               <!-- <li><a href="resources.html">Resources</a></li> -->
           </ul>
