@@ -243,10 +243,36 @@ footer {
     }
 }
 
+.sponsors {
+    margin-top: 2em;
+}
+
 .sponsor-header {
     margin-top: 28px;
 }
+
+.sponsor {
+    border-bottom: 1px solid #D8D4AF;
+    padding: 15px 0;
+}   
+    .sponsor:first-child {
+        padding-top: 0;
+    }
+
+    .sponsor:last-child {
+        border-bottom: none;
+    }
     
+    .sponsor img {
+        margin: 0 0 5px;
+    }
+
+    .sponsor p {
+        font-size: 15px;
+        line-height: 1.4;
+        color: #444;
+        margin: 0;
+    }
     
 /* -----------------------------------------
     Mentors   

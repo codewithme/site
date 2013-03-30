@@ -4,7 +4,7 @@
 
      <h4>Mentors</h4>
 
-      <% workshop.mentors.each_slice(3) { |row| %>
+      <% workshop.mentors.each_slice(4) { |row| %>
       
         <div class="row">
             
@@ -12,7 +12,7 @@
 
               <div class="three columns">
                 <center>
-                  <a target="_blank" href="<%= person.url %>"><img src="<%= person.image %>"/></a>
+                  <a target="_blank" href="<%= person.url %>"><%= image_tag person.image %></a>
                 </center>
                 <p class="name"><a target="_blank" href="<%= person.url %>"><%= person.name %></a></p>
                 <p class="title"><%= person.title %></p>
@@ -25,9 +25,12 @@
     
       <% } %> 
    
+
+  <% if workshop.assistants then %>
+
    <h4>With help from:</h4>
 
-     <% workshop.assistants.each_slice(3) { |row| %>
+     <% workshop.assistants.each_slice(4) { |row| %>
       
         <div class="row">
             
@@ -35,7 +38,7 @@
 
               <div class="three columns">
                 <center>
-                  <a target="_blank" href="<%= person.url %>"><img src="<%= person.image %>"/></a>
+                  <a target="_blank" href="<%= person.url %>"><%= image_tag person.image %></a>
                 </center>
                 <p class="name"><a target="_blank" href="<%= person.url %>"><%= person.name %></a></p>
                 <p class="title"><%= person.title %></p>
@@ -47,10 +50,12 @@
         </div>
     
       <% } %> 
+
+  <% end %>
    
    <h4>Program Directors</h4>
    
-    <% workshop.directors.each_slice(3) { |row| %>
+    <% workshop.directors.each_slice(4) { |row| %>
       
         <div class="row">
             
@@ -58,7 +63,7 @@
 
               <div class="three columns">
                 <center>
-                  <a target="_blank" href="<%= person.url %>"><img src="<%= person.image %>"/></a>
+                  <a target="_blank" href="<%= person.url %>"><%= image_tag person.image %></a>
                 </center>
                 <p class="name"><a target="_blank" href="<%= person.url %>"><%= person.name %></a></p>
                 <p class="title"><%= person.title %></p>
@@ -66,6 +71,8 @@
                </div>  
           
             <% end %>
+
+            <div class="six columns"></div>
 
         </div>
     

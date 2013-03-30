@@ -6,11 +6,12 @@
           <strong>You want to learn how to code</strong>, but the newsroom always needs you to do something else instead. Maybe you've even tried learning on your own, but it's hard without someone there to help. At  <em>Code with me</em>, a two-day workshop, we'll teach you how to code from the ground up so you can tell meaningful, interactive stories. 
       </p>
       <p>
-          We're specifically designed for <strong>journalists without coding experience</strong>. With one mentor for every two students, you'll always have the attention of a dedicated teacher so you can learn at your own pace, and never feel lost or behind. With nine mentors total, you'll join a supportive learning community that will continue on after the workshop.
+          We're specifically designed for <strong>journalists without coding experience</strong>. With one mentor for every two students, you'll always have the attention of a dedicated teacher so you can learn at your own pace, and never feel lost or behind. With <%= workshop.mentors_cardinal %> mentors total, you'll join a supportive learning community that will continue on after the workshop.
       </p>
       <p>
           Plus, you'll have fun. You'll <strong>learn HTML, CSS and Javascript</strong> by building your own interactive project. Our goal is to make this your turning point &mdash; an experience that not only teaches the basics of code, but gives you the skills and confidence you need to keep programming on your own and in your newsroom.
       </p>
+      <p><em><%= workshop.organized_with %></em></p>
    </div>   
 
    <div class="three columns workshop-section">
@@ -19,9 +20,12 @@
       <h2>Details</h2>
 
       <div class="confinfo">
-        <a href="apply.html" class="button">Apply now</a>
+        <% if workshop.applications.status == "open" %>
+          <a href="apply.html" class="button">Apply now</a>
+        <% end %>
         <p><strong>Deadline</strong>: <%= workshop.applications.deadline %></p>
         <p><strong>Workshop cost</strong>: $85</p>
+        <p><strong>Venue</strong>: <a href="<%= workshop.venue_link %>" target="_blank"><%= workshop.venue %></a></p>
       </div>
 
       <!-- <div class="confinfo">
@@ -37,12 +41,17 @@
       </div> -->
     </section>
     
-    <section>
-      <h2 class="sponsor-header">Sponsors</h2>
-      <% for sponsor in workshop.sponsors %>
-        <a href="<%= sponsor.url %>"><img class="sponsor-image" src="<%= sponsor.image %>"></a>
-        <p><%= sponsor.role %></p>
-      <% end %>
+    <section class="sponsors">
+      <h2>Sponsors</h2>
+      <div class="sponsor-list">
+        <% for sponsor in workshop.sponsors %>
+          <div class="sponsor">
+            <a href="<%= sponsor.url %>"><%= image_tag sponsor.image, :class => 'sponsor-logo' %></a>
+            <p><%= sponsor.role %></p>
+          </div>
+        <% end %>
+
+      </div>
     </section>
 
     <section>
