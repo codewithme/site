@@ -43,8 +43,8 @@ body {
     background-color: #F3F1DC;
     border: 0.8em solid  #D8D4AF;
     font-family: "omnes-pro", Arial, sans-serif;
-    font-size-adjust: 0.508;
-    -webkit-font-smoothing: antialiased !important;
+    /*font-size-adjust: 0.508;*/
+    -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -61,6 +61,7 @@ a {
     text-decoration: none;
     line-height: inherit;
     cursor: pointer;
+    -webkit-font-smoothing : subpixel-antialiased;
 }
 
     a:hover { 
@@ -93,9 +94,13 @@ header {
                 margin-right: 0.3em;
             }
 
+            h1 a:hover   {
+                text-decoration: none;
+            }
+
             h1 span {
                 font-family: "omnes-pro", Arial, sans-serif;
-                font-size: 23px;
+                font-size: 20px;
                 font-weight: 300;
                 display:  inline-block;
                 /*margin-left:  .5em;*/
@@ -253,7 +258,7 @@ footer {
 
 
 .name {
-    color:  #1b1b1b;
+    color:  #32B09B;
     font-size: 22px;
     font-weight: 500;
     text-align: center;

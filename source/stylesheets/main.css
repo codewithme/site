@@ -24,6 +24,7 @@
     background-color: #f3f1dc;
     font-family: 'omnes-pro', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
+
     border: 0.8em solid #D8D4AF;
  }
 
@@ -31,6 +32,7 @@
     color: #32B09B;
     text-decoration: none;
     line-height: inherit;
+    -webkit-font-smoothing : subpixel-antialiased;
 }
 
     a:hover { 
@@ -233,3 +235,15 @@ table {
     margin: 0 0 1em 0;
 }
 
+@media only screen and (max-width:500px) {
+    .title-row {
+        margin-top: 2em;
+    }
+    .homepage h1 {
+        font-size: 40px;
+    }
+    p,
+    .intro-row p {
+        font-size: 18px;
+    }
+}
