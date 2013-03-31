@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width" />
   <link rel="shortcut icon" type="image/ico" href="http://codewithme.us/favicon-codewithme.ico">
 
-  <title><%= workshop.title %> - <%= workshop.dates %></title>
+  <title><% if current_page.data.title then %><%= current_page.data.title %> - <% end %><%= workshop.title %> - <%= workshop.dates %></title>
   <meta name="description" content="A two-day programming workshop for journalists in <%= workshop.geographic %>">
   <meta name="keywords" content="Code with me, programming, coding, journalists, journalism workshop, HTML, CSS, jQuery">
   <meta name="author" content="Tom Giratikanon and Sisi Wei">

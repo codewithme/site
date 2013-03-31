@@ -60,6 +60,7 @@ a {
     color: #32B09B;
     text-decoration: none;
     line-height: inherit;
+    cursor: pointer;
 }
 
     a:hover { 
