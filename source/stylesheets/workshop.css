@@ -92,6 +92,7 @@ header {
 
             h1 a {
                 margin-right: 0.3em;
+                -webkit-font-smoothing: antialiased;
             }
 
             h1 a:hover   {
@@ -133,6 +134,10 @@ nav .columns {
             font-weight: 600;
             padding: 6px 20px 6px 0;
         } 
+
+        nav ul li a { 
+            -webkit-font-smoothing: antialiased;
+        }
 
         .action {
             background-color: 

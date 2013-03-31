@@ -66,11 +66,11 @@ title: Mentors
 
               <div class="three columns">
                 <center>
-                  <a target="_blank" href="<%= person.url %>"><%= image_tag person.image %></a>
+                  <%= image_tag person.image %>
                 </center>
-                <p class="name"><a target="_blank" href="<%= person.url %>"><%= person.name %></a></p>
+                <p class="name"><%= person.name %></p>
                 <p class="title"><%= person.title %></p>
-                <p class="work"><a target="_blank" href="http://"><%= person.organization %></a></p>
+                <p class="work"><%= person.organization %></p>
                </div>  
           
             <% end %>
