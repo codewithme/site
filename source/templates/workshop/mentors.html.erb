@@ -11,7 +11,7 @@ title: Mentors
       
         <div class="row">
             
-            <% for person in row %>
+            <% row.each_with_index {  |person, index|   %>
 
               <div class="three columns">
                 <center>
@@ -21,10 +21,28 @@ title: Mentors
                 <p class="title"><%= person.title %></p>
                 <p class="work"><%= person.organization %></p>
                </div>  
+
+                <% if (row.length == 1 && index == 0) then %>
+
+                  <div class="nine columns"></div>
+
+                 <% elsif (row.length == 2 && index == 1) then %>
+
+                  <div class="six columns"></div>
+
+                 <% elsif (row.length == 3 && index == 2) then %>
+
+                  <div class="three columns"></div>
+
+                 <% end %>
           
-            <% end %>
+            <% } %>
 
         </div>
+
+
+
+              
     
       <% } %> 
    
@@ -46,7 +64,7 @@ title: Mentors
                 <p class="name"><a target="_blank" href="<%= person.url %>"><%= person.name %></a></p>
                 <p class="title"><%= person.title %></p>
                 <p class="work"><a target="_blank" href="http://"><%= person.organization %></a></p>
-               </div>  
+               </div> 
           
             <% end %>
 
