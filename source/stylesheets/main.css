@@ -162,7 +162,7 @@ footer {
 ----------------------------------------- */
 
 #mc_embed_signup{background:#f3f1dc; clear:left; font:14px Helvetica,Arial,sans-serif; }
-#mc_embed_signup .button {clear: both; background-color: #32b09b; border: 1px solid rgb(139, 135, 135); }
+#mc_embed_signup input.button {clear: both; background-color: #32b09b; border: 1px solid rgb(139, 135, 135); min-width:120px; }
 #mc_embed_signup form {padding: 10px 0 0 0; } 
 #mc_embed_signup .button:hover {background-color: rgb(28, 141, 122); } 
 #mc_embed_signup input.email { width: 50%; clear: none; float: left; margin-right: 4px; }

@@ -158,6 +158,10 @@ nav .columns {
     margin: 0 0 16px 0;
 }
 
+    .button:hover {
+        background-color: #1C8D7A;
+    }
+
 footer {
     text-align: center;
     margin: 30px 10% 20px;
