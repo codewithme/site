@@ -31,34 +31,37 @@
 </head>
 <body class="<%= current_page.data.page_type %>">
 
-  <header>
-
-    <% if current_page.data.page_type == "homepage" then %>
-      <div class="row title-row">
-        <div class="eight columns offset-by-two">
+  <header class="row">
+    <div class="twelve columns">
+      
+      <% if current_page.data.page_type == "homepage" then %>
+        <div class="rule">
           <h1 class="logo">Code with me</h1> 
         </div>
-      </div>
-    <% else %>
-      <div class="row title-row">
-        <div class="eight columns offset-by-two">
-            <h2 class="logo"><a href="/">Code with me</a></h2>   
-            <h1><%= current_page.data.title %></h1>
+      <% else %>
+        <h2 class="logo"><a href="/">Code with me</a></h2>   
+        <div class="rule">
+          <h1><%= current_page.data.title %></h1>
+          <div class="links"><%= current_page.data.links %></div>
         </div>
-      </div>
-    <% end %>
-  </header>
+      <% end %>
 
+    </div>
+  </header>
   
   <!-- Page Content -->
-  <%= yield %>
+
+  <div class="row content">
+    <div class="nine columns">
+      <%= yield %>
+    </div>
+    <%= partial( :mainnav ) %>   
+  </div>
 
   <!-- Footer -->
-  <div class="row">
-    <footer class="eight columns offset-by-two">
-      Founded by <a href="http://www.twitter.com/sisiwei">Sisi Wei</a> & <a href="http://www.tgirat.com/">Tom Giratikanon</a> /  Design concept by <a href="http://www.twitter.com/kuanluo">Kuan Luo</a> <br /> Together with &#009825
+    <footer>
+      Founded by <a href="http://www.twitter.com/sisiwei">Sisi Wei</a> & <a href="http://www.tgirat.com/">Tom Giratikanon</a> /  Design concept by <a href="http://www.twitter.com/kuanluo">Kuan Luo</a> / Together with &#009825
     </footer>
-  </div>
 
   <%= javascript_include_tag  "analytics" %>
 

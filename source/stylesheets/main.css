@@ -8,27 +8,44 @@
 
     Gorgeous color scheme and typography by Kuan Luo
 
-    Green: #00b29e; (main logo green??)
-    Brown: #d8d4af; (background accent)
-    Tan:   #f3f1dc; (main background color)
+    Green: #00b29e; green
+    Tan:   #f3f1dc; background color
+    Brown: #B1A77C; dark background accent
+    Brown: #d8d4af; light background accent
 
-    Main font stack: 
+    BODY font stack: 
     font-family: 'omnes-pro', Arial, sans-serif;
-
-    Label font stack:
+    
+    H4 font stack:
     font-family: alternate-gothic-no-3-d, omnes-pro, sans-serif;
 
  */
 
- body {
+/* --------------------------------------------------
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Header
+:: Footer
+:: Mailchimp Form
+:: Mobile
+
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+body {
     background-color: #f3f1dc;
     font-family: 'omnes-pro', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
-
     border: 0.8em solid #D8D4AF;
- }
+    text-align: left;
+}
 
- a {
+a {
     color: #32B09B;
     text-decoration: none;
     line-height: inherit;
@@ -40,61 +57,31 @@
         text-decoration: underline;
     }
 
-.logo {
-    font: 400 2.5em/1 Pacifico, Arial, Helvetica, sans-serif;
-    color: #00b29e;
+h1 {
+    font: 600 60px/1 'omnes-pro', Arial, sans-serif;
+    margin-top: 8px;
+    margin-bottom: 12px;
 }
-
-.title-row {
-    margin-top: 5em;
-}
-
-.homepage h1 {
-    font-size: 7.5em;
-}
-
-.inside h1 {
-    font: 600 61px/1 'omnes-pro', Arial, sans-serif;
-    text-align: left;
-}
-
-h3 {
-    font-family: alternate-gothic-no-3-d, omnes-pro, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    color: #C7C2A1;
-    margin: 0 0 .2em 0;
-}
-
-    h3 a {
-        color: #C7C2A1;
-        /*font-weight: ;*/
+    .homepage h1 {
+        font-size: 7.5em;
+        margin-bottom: 21px;
     }
 
-
-h4, h5 {
-    /*color: #d8d4af;*/
-    line-height: 1.2;
+h3 {
+    line-height: 1.6;
     margin: 0;
+    font-size: 1.5em;
+    margin-bottom: 7px;
 }
 
 h4 {
-    font-size: 1.4em;
-}
-
-h5 {
-    font-size: 1.2em;
-}
-
-.bullet, .bullet li {
-    list-style-type: disc;
-    margin-left: 15px;
+    font: 400 23px/34px alternate-gothic-no-3-d, omnes-pro, sans-serif;
+    color: #B1A77C;
+    margin: 0.1em 0 0 0;
 }
 
 p {
     font-size: 21px;
-    /*margin: 0;*/
     font-weight: 300;
 }
 
@@ -106,116 +93,58 @@ br {
     display: block;
 }
 
-.hp-logo-row {
-    margin-top: 5em;
-}
-
-.logo-row {
-    margin-top: 5em;
-}
-
-.splash-logo {
-    margin:0 auto;
-width:100%;
-    max-width: 637px;
-}
-
-.medium-logo {
-    max-width: 198px;
-}
-
-.jumps {
-    padding: 1.5em 0;
-    text-align: left;
-}
-
-    .jumps a {
-        font-size: 16px;
-        margin: 0 5px
-    }
-    
-    .jumps a:first-child {
-        margin-left: 0px;
-    }
-    
-    .jumps span {
-        color: #d8d4af;
-    }
-
-.first-row {
-    margin-top: 1.5em;
-}
-
-.title-row .logo {
-    padding: 0 0 10px 0;
-    margin-left: -5px;
-    /*border-bottom: 1px solid #d8d4af;*/
-}
-
-.upcoming-row {
-    font-size: 21px;
-}
-
-.upcoming-row .columns h3 {
-    font-family: 'omnes-pro', Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    color: #000;
-    font-size: 21px;
-}
-
-.workshop-row {
-    
-}
-
-.intro-row {
-    text-align: center;
-    margin-top: 1.5em;
-}
-
-.intro-row p {
-    font-size: 1.5em;
-    text-align: left;
-    line-height: 1.6;
-}
-
-.workshop-row {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-    .workshop-row h3 {
-        font-family: alternate-gothic-no-3-d, omnes-pro, sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 26px;
-    }
-
-/* MAILCHIMP FORM */
-
-#mc_embed_signup{background:#f3f1dc; clear:left; font:14px Helvetica,Arial,sans-serif; }
-#mc_embed_signup .button {clear: both; background-color: #32b09b; border: 1px solid rgb(139, 135, 135); }
-#mc_embed_signup form {padding: 10px 0 0 0; } 
-#mc_embed_signup .button:hover {background-color: rgb(28, 141, 122); } 
-#mc_embed_signup input.email { width: 72%; }
-
-
-.bring-us-row {
-    margin-top: 2em;
-}
-
-    .bring-us-row h3{
-        font-size: 1.4em;
-    }
-
-.action-row {
-    margin-top: 2em;
-}
-
 li {
     font-size: 21px;
     list-style: none;
     font-weight: 300;
 }
+
+.bullet, .bullet li {
+    list-style-type: disc;
+    margin-left: 15px;
+}
+
+.logo {
+    font: 400 2.2em/1 Pacifico, Arial, Helvetica, sans-serif;
+    color: #00b29e;
+}
+
+/* -----------------------------------------
+   Header
+----------------------------------------- */
+
+header {
+    padding: 3em 0 1.5em 0;
+}
+
+    .rule {
+        border: 1px solid #D8D4AF;    
+        border-width: 1px 0 1px 0;
+        padding-top:  5px;
+    }
+
+        .homepage .rule {
+            border-top-width: 0;
+        }
+
+    .links {
+        padding: 0.25em 0 1.75em 0;
+        text-align: left;
+        color: #d8d4af;
+    }
+
+        .links a {
+            font-size: 18px;
+            margin: 0 5px
+        }
+        
+        .links a:first-child {
+            margin-left: 0px;
+        }
+
+/* -----------------------------------------
+   Footer
+----------------------------------------- */
 
 footer {
     text-align: center;
@@ -228,45 +157,23 @@ footer {
     line-height: 21px;
 }
 
-table, 
-table thead, 
-table thead tr th, 
-table tfoot tr td, 
-table tbody tr td,
-table tfoot,
-td,
-tr,
-table tbody tr:nth-child(even)  {
-    background-color: transparent;
-    border: 0;
-    font-weight: 300;
-    font-size: 21px;
-}
+/* -----------------------------------------
+   Mailchimp Form
+----------------------------------------- */
 
-table thead tr th {
-    padding: 0 0 21px 0;
-    font-weight: 500;
-}
+#mc_embed_signup{background:#f3f1dc; clear:left; font:14px Helvetica,Arial,sans-serif; }
+#mc_embed_signup .button {clear: both; background-color: #32b09b; border: 1px solid rgb(139, 135, 135); }
+#mc_embed_signup form {padding: 10px 0 0 0; } 
+#mc_embed_signup .button:hover {background-color: rgb(28, 141, 122); } 
+#mc_embed_signup input.email { width: 50%; clear: none; float: left; margin-right: 4px; }
+#mc_embed_signup .clear { float: left; }
 
-.schedule-label {
-    padding: 0 15px 21px 0; 
-}
-
-.schedule-description {
-    padding: 0 0px 21px 0;
-}
-
-table {
-    width: 400px;
-    float: left;
-}
-
-#schedule h3 {
-    margin: 0 0 0 0;
-}
+/* -----------------------------------------
+   Mobile
+----------------------------------------- */
 
 @media only screen and (max-width:500px) {
-    .title-row {
+    header {
         margin-top: 2em;
     }
     .homepage h1 {
