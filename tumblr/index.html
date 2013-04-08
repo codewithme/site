@@ -28,6 +28,27 @@
     <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://codewithme.us/stylesheets/main.css" type="text/css">
 
+    <style>
+    h3.title {
+        font-size: 2.5em;
+    }
+
+    h3.title a, h1 a, h1 a:hover {
+        color: black;
+    }
+
+    h3.title a:hover, h1 a:hover, h2.logo a:hover {
+        text-decoration: none;
+    }
+    .date, .tags {
+        color: rgb(136, 136, 136);
+        font-size: 1.1em;
+        text-transform: uppercase;
+        margin: 10px 0px;
+    }
+    .tags { text-align:right; display:none; }
+    </style>
+
     <script type="text/javascript" src="http://codewithme.us/javascripts/all.js"></script>
     <!--[if lt IE 9]>
     <link rel="stylesheet" href="stylesheets/ie.css">
@@ -38,14 +59,15 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 </head>
-<body class="homepage">
+<body class="inside blog">
     <header class="row">
-        <div class="twelve columns">
-          <div class="rule">
-              <h1 class="logo">Code with me</h1> 
-          </div>
+    <div class="twelve columns">
+        <h2 class="logo"><a href="http://codewithme.us">Code with me</a></h2>   
+        <div class="rule">
+          <h1 style="padding-bottom:10px;"><a href="http://blog.codewithme.us">Blog</a></h1>
         </div>
-      </header>
+    </div>
+  </header>
     
     <div class="row content">
         <div class="nine columns">
@@ -62,7 +84,18 @@
             
             {block:Posts}
                 <div class="post">
-                    
+                    {block:Date}
+                        <div class="date">
+                            {block:Reblog}
+                                {lang:Reblogged TimeAgo from ReblogParentName} {block:RebloggedFromReblog}(<span style="text-transform:lowercase;">{lang:Originally from ReblogRootName}</span>){/block:RebloggedFromReblog}
+                            {/block:Reblog}
+                            
+                            {block:NotReblog}
+                                {lang:Posted TimeAgo from source}
+                            {/block:NotReblog}
+                        </div>
+                    {/block:Date}
+
                     {block:Photo}
                         <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
                         {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
@@ -119,7 +152,7 @@
                     {/block:Quote}
                         
                     {block:Text}
-                        {block:Title}<div class="title">{Title}</div>{/block:Title}
+                        {block:Title}<h3 class="title"><a href="{Permalink}">{Title}</a></h3>{/block:Title}
                         <div class="copy">{Body}</div>
                     {/block:Text}
                     
@@ -133,7 +166,7 @@
                     {/block:Answer}
                     
                     {block:Chat}
-                        {block:Title}<div class="title">{Title}</div>{/block:Title}
+                        {block:Title}<h3 class="title">{Title}</h3>{/block:Title}
                         <div class="chat">
                             <div class="lines">
                                 {block:Lines}
@@ -149,24 +182,6 @@
                         <div class="link"><a href="{URL}" {Target}>{Name} &raquo;</a></div>
                         {block:Description}<div class="copy">{Description}</div>{/block:Description}
                     {/block:Link}
-                    
-                    {block:Date}
-                        <a href="{Permalink}">
-                            <div class="footer for_permalink">
-                                <div class="date">
-                                    {block:Reblog}
-                                        {lang:Reblogged TimeAgo from ReblogParentName} {block:RebloggedFromReblog}(<span style="text-transform:lowercase;">{lang:Originally from ReblogRootName}</span>){/block:RebloggedFromReblog}
-                                    {/block:Reblog}
-                                    
-                                    {block:NotReblog}
-                                        {lang:Posted TimeAgo from source}
-                                    {/block:NotReblog}
-                                </div>
-                                <div class="notes">{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount} {block:IfDisqusShortname}{block:NoteCount}&bull;{/block:NoteCount} <a href="{Permalink}#disqus_thread">{lang:View comments}</a>{/block:IfDisqusShortname}</div>
-                                <div class="clear"></div>
-                            </div>
-                        </a>
-                    {/block:Date}
                     
                     <div class="footer {block:ContentSource}with_source_url{/block:ContentSource}" style="
                         display:none;
@@ -235,8 +250,9 @@
           <p>
             <a href="http://codewithme.us/bring-us-to-your-city.html" target="_blank">Bring us to your city</a>
             <br /><a href="http://codewithme.us/volunteer-as-a-mentor.html" target="_blank">Volunteer as a mentor</a>
-            <br /><a href="http://codewithme.us/become-a-sponsor.html" target="_blank">Become a sponsor</a>
+            <!-- <br /><a href="http://codewithme.us/become-a-sponsor.html" target="_blank">Become a sponsor</a> -->
             <br /><a href="http://codewithme.us/about-us.html" target="_blank">Learn about us</a>
+            <br /><a href="http://blog.codewithme.us" target="_blank">Read our blog</a>
           </p>
           <h4>Past workshops</h4>
           <p>

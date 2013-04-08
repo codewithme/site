@@ -1,6 +1,11 @@
 <div class="row">
 
    <div class="nine columns intro-content">
+      <% if workshop.applications.status == "notified" then %>
+
+        <div class="banner">We've e-mailed all applicants about their status. If you haven't received an email, please contact us at <a href="mailto:team@codewithme.us">team@codewithme.us</a>.</div>
+      <% end %>
+
       <h2>A workshop for beginners</h2>
       <p>
         <strong>Learn to code with a mentor by your side</strong>. You want to learn how to program, but the newsroom always needs you to do something else instead. Maybe you've even tried on your own, but it's hard without someone there to help. At  <em>Code with me</em>, a two-day workshop, we pair one professional with every two students, and teach you how to code from the ground up. 

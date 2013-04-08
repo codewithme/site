@@ -8,16 +8,31 @@ title: Apply
 
         <h2>Applications</h2>
 
-        <p><strong>Apply now for <%= workshop.title %></strong>! <%= workshop.applications.geography %> </p>
+        <% if workshop.applications.status == "open" %>
 
-        <p>Applications are <strong>due <%= workshop.applications.deadline %></strong>, and you'll be notified by <%= workshop.applications.notification %>. You only have to register and pay once you're accepted. We accept students based on the following:</p>
-          <ul class="answer-list">
-            <li>You must be a journalist or a student studying journalism</li>
-            <li>You must have little or no coding experience</li>
-            <li>We will give preference to applicants who will actively use these skills in the service of journalism</li>
-          </ul>
-        <p>Please read our <a href="faq.html">FAQs</a> before applying. <a href="mailto:team@codewithme.us">E-mail us</a> if you have any questions!</p>
-        <iframe onLoad="window.scrollTo(0,0);" src="<%= workshop.applications.form %>" width="100%" height="2100" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          <p><strong>Apply now for <%= workshop.title %></strong>! <%= workshop.applications.geography %> </p>
+
+          <p>Applications are <strong>due <%= workshop.applications.deadline %></strong>, and you'll be notified by <%= workshop.applications.notification %>. You only have to register and pay once you're accepted. We accept students based on the following:</p>
+            <ul class="answer-list">
+              <li>You must be a journalist or a student studying journalism</li>
+              <li>You must have little or no coding experience</li>
+              <li>We will give preference to applicants who will actively use these skills in the service of journalism</li>
+            </ul>
+          <p>Please read our <a href="faq.html">FAQs</a> before applying. <a href="mailto:team@codewithme.us">E-mail us</a> if you have any questions!</p>
+          <iframe onLoad="window.scrollTo(0,0);" src="<%= workshop.applications.form %>" width="100%" height="2100" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+        <% elsif workshop.applications.status == "pre" %>
+          <p><strong>Applications will open soon!</strong></p>
+        <% elsif workshop.applications.status == "review" %>
+          <p><strong>Thanks to all those who applied!</strong> Applications are now closed, and applicants will be notified by <%= workshop.applications.notification %>.</p>
+
+        <% elsif workshop.applications.status == "notified" then %>
+
+          <p><strong>We've e-mailed all applicants about their status</strong>. If you haven't received an email, please contact us at <a href="mailto:team@codewithme.us">team@codewithme.us</a>.</p>
+
+        <% end %>
+
+       
 
     </div>
 
