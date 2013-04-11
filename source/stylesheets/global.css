@@ -11,3 +11,28 @@ html {
 body {
     min-height: 100%;
 }
+
+h3 {
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.5em;
+    margin-bottom: 7px;
+}
+
+h4 {
+    font: 400 23px/34px alternate-gothic-no-3-d, omnes-pro, sans-serif;
+    color: #B1A77C;
+    margin: 0.1em 0 0 0;
+}
+
+
+/* -----------------------------------------
+   Mailchimp Form
+----------------------------------------- */
+
+#mc_embed_signup{background:#f3f1dc; clear:left; font:14px Helvetica,Arial,sans-serif; }
+#mc_embed_signup input.button {clear: both; background-color: #32b09b; border: 1px solid rgb(139, 135, 135); min-width:120px; }
+#mc_embed_signup form {padding: 10px 0 0 0; } 
+#mc_embed_signup .button:hover {background-color: rgb(28, 141, 122); } 
+#mc_embed_signup input.email { width: 50%; clear: none; float: left; margin-right: 4px; }
+#mc_embed_signup .clear { float: left; }
