@@ -6,7 +6,7 @@
       <div class="confinfo">
         <% if workshop.applications.status == "open" && show_apply %>
           <a href="apply.html" class="button">Apply now</a>
-          <p><strong>Deadline</strong>: <%= workshop.applications.deadline %>.  Notified by <%= workshop.applications.notification %>.</p>
+          <p><strong>Deadline</strong>: <%= workshop.applications.deadline %>.  Notification by <%= workshop.applications.notification %>.</p>
         <% elsif workshop.applications.status == "pre" %>
           <p><strong>Applications will open soon!</strong></p>
         <% elsif workshop.applications.status == "review" && show_apply %>
