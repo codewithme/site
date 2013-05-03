@@ -1,0 +1,104 @@
+.ui-state-default, .ui-widget-content a.ui-state-default {
+    border-color: #999;
+}
+
+.box-container {
+    /*background-color: #ece9c7;*/
+    box-sizing: content-box;
+    float: left;
+    background-image: url(/images/exercises/margin-swatch.png);
+    clear: both;
+} 
+    p {
+        clear: both;
+        width: 100%;
+    }
+
+.box {
+    border: 1px solid #00b29e;
+    font-size: 20px;
+    background-color: #eee;
+    width: 300px;
+    box-sizing: content-box;
+    float: left;
+    text-align: center;
+    font-weight: 600;
+}
+    
+    #width .ui-slider-range-min {
+        background: #CCC;
+     }
+
+     #borderWidth .ui-slider-range-min {
+        background: #00b29e;
+     }
+
+     #margin .ui-slider-range-min {
+        /*background: #ece9c7;*/
+        background: url(/images/exercises/margin-swatch.png);
+     }
+
+fieldset {
+    border: none;
+    position: relative;
+}
+
+    .label {
+        float: left;
+        background: none;
+        color: black;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 10px 0 0;
+        width: 120px;
+        text-align: right;
+    }
+
+    .value {
+        float: left;
+        font-size: 18px;
+        margin: 0 20px 0 0;
+        width: 40px;
+        text-align: right;
+    }
+
+    .slider-unit {
+        width: 140px;
+        position: relative;
+        float: left;
+    }
+
+        .slider-container {
+            width: 140px;
+            height: 20px;
+            margin: 5px 0 0 0;
+        }
+
+        .tic {
+            position: absolute;
+            color: #666;
+            font-size: 13px;
+            margin: 2px 0 0 0;
+        }
+
+        .tic.min {
+            left: -5px;
+        }
+
+        .tic.max {
+            right: -5px;
+        }
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

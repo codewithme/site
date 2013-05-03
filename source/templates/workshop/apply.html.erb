@@ -19,7 +19,7 @@ title: Apply
               <li>We will give preference to applicants who help us understand how they will actively use these skills in the service of journalism</li>
             </ul>
           <p>Please read our <a href="faq.html">FAQs</a> before applying. <a href="mailto:team@codewithme.us">E-mail us</a> if you have any questions!</p>
-          <iframe onLoad="window.scrollTo(0,0);" src="<%= workshop.applications.form %>&bc=F3F1DC" width="100%" height="2200" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          <iframe onLoad="window.scrollTo(0,0);" src="<%= workshop.applications.form %>&bc=F3F1DC" width="100%" height="2300" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
 
         <% elsif workshop.applications.status == "pre" %>
           <p><strong>Applications will open soon!</strong></p>
@@ -30,9 +30,15 @@ title: Apply
 
           <p><strong>We've e-mailed all applicants about their status</strong>. If you haven't received an email, please contact us at <a href="mailto:team@codewithme.us">team@codewithme.us</a>.</p>
 
-          <p>If you want to add yourself to the waitlist, you may <a href="<%= workshop.applications.form %>">do so here</a>.</p>
+          <p>If you want to add yourself to the waitlist, you may do so here:</p>
 
-        <% end %>
+          <iframe onLoad="window.scrollTo(0,0);" src="<%= workshop.applications.form %>&bc=F3F1DC" width="100%" height="2300" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+       <% elsif workshop.applications.status == "full" then %>
+
+         <p><strong>Applications are closed</strong>. Our student roster has been finalized. If a student cancels at the last minute, we will contact individuals on the wait list.</p>
+
+      <% end %>
 
     </div>
 

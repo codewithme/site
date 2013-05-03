@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js updated" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <title><% if current_page.data.title then %><%= current_page.data.title %> - <% end %>Code with me: Programming workshops for journalists</title>
+  <link rel="shortcut icon" type="image/ico" href="http://codewithme.us/favicon-codewithme.ico">
+  <meta name="description" content="Code with me is a series of two-day programming workshop for journalists in the U.S.">
+  <meta name="keywords" content="Code with me, codewithme, code, with, me, programming, coding, journalists, journalism workshop, HTML, CSS, jQuery">
+  <meta name="author" content="Tom Giratikanon and Sisi Wei">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="vWxsEqvBx92cKNQbGtKBUYgdlALuGhuuGTv1jP93pP8" />
+  
+  <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag "main" %>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+  <%= javascript_include_tag  "all" %>
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="//use.typekit.net/wbz0zag.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+<body class="<%= current_page.data.page_type %>">
+
+  <header class="row">
+    <div class="twelve columns">
+
+      <h2 class="logo"><a href="/">Code with me</a></h2>   
+      <div class="rule">
+        <h1><%= current_page.data.title %></h1>
+      </div>
+
+    </div>
+  </header>
+  
+  <!-- Page Content -->
+
+  <div class="row content">
+    <%= yield %>
+  </div>
+
+  <!-- Footer -->
+    <footer>
+      Founded by <a href="http://www.twitter.com/sisiwei">Sisi Wei</a> & <a href="http://www.tgirat.com/">Tom Giratikanon</a> /  Design concept by <a href="http://www.twitter.com/kuanluo">Kuan Luo</a> / Together with &#009825
+    </footer>
+
+  <%= javascript_include_tag  "analytics" %>
+
+</body>
+</html>

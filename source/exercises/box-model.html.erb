@@ -1,0 +1,129 @@
+---
+title: The Box Model
+page_type: inside
+---
+
+<%= stylesheet_link_tag "box-model" %>
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+
+
+<div class="five columns">
+    <fieldset id="width">
+        <div class="label">width:</div>
+        <div class="value"></div>
+        <div class="slider-unit">
+            <div class="slider-container"></div>
+            <div class="tic min"></div>
+            <div class="tic max"></div>
+        </div>     
+    </fieldset>
+    <fieldset id="padding">
+        <div class="label">padding:</div>
+        <div class="value"></div>
+        <div class="slider-unit">
+            <div class="slider-container"></div>
+            <div class="tic min"></div>
+            <div class="tic max"></div>
+        </div>     
+    </fieldset>
+    <fieldset id="borderWidth">
+        <div class="label">border-width:</div>
+        <div class="value"></div>
+        <div class="slider-unit">
+            <div class="slider-container"></div>
+            <div class="tic min"></div>
+            <div class="tic max"></div>
+        </div>     
+    </fieldset>
+    <fieldset id="margin">
+        <div class="label">margin:</div>
+        <div class="value"></div>
+        <div class="slider-unit">
+            <div class="slider-container"></div>
+            <div class="tic min"></div>
+            <div class="tic max"></div>
+        </div>     
+    </fieldset>
+    
+</div>
+<div class="seven columns clearfix">
+
+    <div class="box-container clearfix">
+        <div id="box" class="box">
+            You can be a <br />box-model master!
+        </div>
+    </div>  
+
+    <p>
+        Welcome, initiate, to the ways of the box model.
+    </p>
+
+</div>
+
+
+ <script>
+  $(function() {
+    // setup master volume
+
+    var data = [
+        { 
+            key: "width",
+            min: 1,
+            max: 350,
+            value: 200 
+        },
+        { 
+            key: "padding",
+            min: 0,
+            max: 40,
+            value: 0 
+        },
+        { 
+            key: "margin" ,
+            min: 0,
+            max: 60,
+            value: 0
+        },
+        { 
+            key: "borderWidth",
+            min: 1,
+            max: 50,
+            value: 1
+        },
+    ];
+
+   
+
+    var render = function(event, ui) {
+        var attributes = _.reduce(data, function(memo, item) {
+            memo[item.key]= item.container.slider("value") + "px";
+            item.$value.text(memo[item.key]);
+            return memo;
+        }, {});
+        $("#box").css(attributes);
+    };
+
+     var defaults = {
+      orientation: "horizontal",
+      range: "min",
+      animate: true,
+      change: render,
+      slide: render,
+      stop: render
+    }
+
+    _.each(data, function(item) {
+        item.$value = $("#" + item.key + " .value");
+        item.container = $("#" + item.key + " .slider-container");
+        $("#" + item.key + " .min").text(item.min + "px");
+        $("#" + item.key + " .max").text(item.max + "px");
+        item.container.slider(_.extend(item, defaults));
+    });
+
+    render();
+
+  });
+</script>

@@ -11,6 +11,11 @@
           <p><strong>Applications will open soon!</strong></p>
         <% elsif workshop.applications.status == "review" && show_apply %>
           <p>Applications are closed. Applicants will be notified by <%= workshop.applications.notification %>.</p>
+        <% elsif workshop.applications.status == "notified" && show_apply %>
+          <a href="apply.html" class="button">Join the waitlist</a>
+          <p>Applicants have been notified. You may still join the waitlist.</p>
+        <% elsif workshop.applications.status == "full" && show_apply %>
+          <p><strong>The workshop is full and registration is closed.</strong></p>
         <% end %>
         <p><strong>Workshop cost</strong>: <%= workshop.cost %></p>
         <p>
