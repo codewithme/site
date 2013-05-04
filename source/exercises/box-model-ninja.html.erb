@@ -1,0 +1,418 @@
+---
+title: Box Model Ninja
+page_type: inside
+---
+
+<%= stylesheet_link_tag "box-model", "jquery-ui-1.8.20.custom" %>
+<%= javascript_include_tag  "box-model", "jquery-ui-1.8.20.custom.min" %>
+<!-- <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script> -->
+
+<div id="game">
+
+    <div class="game-navigation twelve columns">
+        <div class="game-navigation-rule">
+            <div class="game-navigation-label">
+                Levels
+            </div>
+            <div class="game-navigation-links"></div>
+        </div>
+    </div>  
+
+    <div class="four columns">
+       <div id="score"></div>
+       <h3>Control your box!</h3>
+       <div id="controls">
+       </div>
+    </div>
+
+    <div id="" class="eight columns clearfix">
+        <div class="screen your-box">
+            <div class="screen-label">Your box</div>
+            <div class="score screen-label">
+                <!-- <span>Score:</span> -->
+                <span>Rating:</span>
+                <!-- <span id="your-score" ></span> -->
+                <span id="rating" ></span>
+            </div>
+            <div class="winner">
+                <div class="congratulations">You're a master!</div>
+                <div class="next">Next level &rarr;</div>
+            </div>
+            <!-- <div class="score-container">
+                <div id="your-score-box"></div>
+            </div>  -->
+            <div class="box-container clearfix">
+                <div id="box" class="box">
+                    &nbsp;
+                    <!-- Control me, <br />I am your box! -->
+                </div>
+            </div>  
+        </div>
+        <div class="screen your-goal">
+            <div class="screen-label">Your goal</div>
+            <div class="box-container clearfix">
+                <div id="target" class="box">
+                    &nbsp;
+                    <!-- All other boxes <br />are jealous of me. -->
+                </div>
+            </div>  
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+<div id="template" class="template">
+    <fieldset id="fffkeyggg">
+        <div class="label">ffflabelggg:</div>
+        <div class="value"></div>
+        <div class="slider-unit">
+            <div class="slider-container"></div>
+            <div class="tic min"></div>
+            <div class="tic max"></div>
+        </div>     
+    </fieldset>        
+</div>
+
+<div id="button" class="template">
+    <div id="button-ffflevelggg" class="level-button" data-index="ffflevelggg">ffflevelggg</div>
+</div>
+
+ <script>
+  $(function() {
+
+    var BoxModelMaster = window.BoxModelMaster = {
+        sliderDefaults: {
+          orientation: "horizontal",
+          range: "min",
+          animate: true,
+          change: this.render,
+          slide: this.render,
+          stop: this.render
+        },
+        index: 1,
+        master: false,
+        ratings: {
+            0: "Novice",
+            15: "Trainee",
+            30: "Good",
+            50: "Very good",
+            70: "Great",
+            85: "Fabulous",
+            96: "Master!"
+        },
+        // ratings: {
+        //     0: "Not bad...",
+        //     30: "Good work",
+        //     50: "Very good.",
+        //     70: "Great work!",
+        //     85: "You're doing fabulous!",
+        //     95: "You're a master!"
+        // },
+        templates: {
+            slider: _.template($("#template").html().replace(/fff/g, "<" + "%" + "=").replace(/ggg/g, "%" + ">")),
+            button: _.template($("#button").html().replace(/fff/g, "<" + "%" + "=").replace(/ggg/g, "%" + ">"))
+        },
+        initialize: function(options) {
+            _.extend(this, options);
+            _.bindAll(this);
+            $("#controls").mousemove(this.render);
+            $(".winner").click(this.nextLevel)
+            this.buildNavigation();
+            this.initializeLevel(1);
+        },
+        buildNavigation: function() {
+            var navigation = _.map(this.data, this.templates.button).join("");
+            var that = this;
+            $(".game-navigation-links").html(navigation);
+            $(".level-button").click(function() {
+                var index = +$(this).attr("data-index");
+                console.log()
+                that.initializeLevel(index);
+            });
+        },
+        handleButton: function(event) {
+            
+        },
+        getLevel: function(num) {
+            return _.findWhere(this.data, { level: +num });
+        },
+        nextLevel:function() {
+            if (++this.index > this.data.length + 1) this.index = 0;
+            this.initializeLevel(this.index);
+        },
+        initializeLevel: function(num) {
+            var level = this.getLevel(num);
+            console.log(num, level);
+            this.level = level;
+            $(".winner").removeClass("show");
+            $("#controls").html("");
+            _.each(level.controls, function(item) {
+                var html = this.templates.slider(item);
+                $("#controls").append(html);
+                item.$value = $("#" + item.key + " .value");
+                item.container = $("#" + item.key + " .slider-container");
+                // $("#" + item.key + " .min").text(item.min + "px");
+                // $("#" + item.key + " .max").text(item.max + "px");
+                item.container.slider(_.extend(item, this.sliderDefaults));
+            }, this);
+            $("#target").css(this.level.target);
+            $("#game").removeClass("").addClass("level-" + this.level.level);
+            $(".active-level").removeClass("active-level");
+            console.log(this.level.level)
+            $("#button-" + this.level.level).addClass('active-level');
+            _.each(this.level.target, function(attribute, key) {
+                if (!this.level.controls[key]) $("#box").css(key, attribute);
+            }, this);
+            this.render();
+        },
+        compare: function() {
+            var score = _.reduce(this.level.controls, function(memo, control) {
+                var value = control.container.slider("value");
+                var target = this.level.target[control.key];
+                var diff = Math.abs(value - target);
+                if (diff <= 1) diff =0;
+                var pct_diff = diff / Math.abs(target - control.value);
+                return Math.abs(pct_diff + memo);
+            }, 0, this); 
+            var num = this.level.controls.length;
+            var percentage = ((num - score)  / num) * 100;
+            percentage = Math.ceil(percentage / 5 ) * 5;
+            var candidates = _.filter(this.ratings, function(label, threshold) {  return (percentage >= threshold) });
+            var rating = _.max(candidates, function(label, threshold) {  return threshold; });
+            if (percentage <= 0) rating = this.ratings[0];
+            if (percentage <= 0) percentage = 0;
+            // $("#your-score").html(percentage.toFixed(0) + "%");
+            $("#rating").html(rating);
+            if (rating == "Master!") { 
+                if (!this.master) this.master = new Date().getTime();
+                this.checkMaster(this.master);
+            } else if (this.master) {
+                this.master = false;
+            }
+        },
+        checkMaster: function(timestamp) {
+            var that = this;
+            setTimeout(function() {
+                if (that.master == timestamp) $(".winner").addClass("show");
+            }, 650);
+        },
+        render: function(event, ui) {
+            var attributes = _.reduce(this.level.controls, function(memo, item) {
+                memo[item.key]= item.container.slider("value") + "px";
+                if (item.key == "borderWidth") item.$value.text(memo[item.key] + " solid #00b29e");
+                else item.$value.text(memo[item.key]);
+                return memo;
+            }, {});
+            $("#box").css(attributes);
+            this.compare();
+        }
+    }
+
+    var data = [
+        {
+            level: 1,
+            target: {
+                width: 300,
+                padding: 0,
+                borderWidth: 1,
+                margin: 0
+            },
+            controls: [
+                { 
+                    key: "width",
+                    label: "width",
+                    min: 1,
+                    max: 350,
+                    value: 10
+                }
+            ]
+        },
+        {
+            level: 2,
+            target: {
+                width: 200,
+                padding: 40,
+                borderWidth: 1,
+                margin: 0
+            },
+            controls: [
+                { 
+                    key: "padding",
+                    label: "padding",
+                    min: 1,
+                    max: 60,
+                    value: 5
+                }
+            ]
+        },
+        {
+            level: 3,
+            target: {
+                width: 200,
+                padding: 0,
+                borderWidth: 1,
+                margin: 20
+            },
+            controls: [
+                { 
+                    key: "margin",
+                    label: "margin",
+                    min: 1,
+                    max: 200,
+                    value: 40
+                }
+            ]
+        },
+        {
+            level: 4,
+            target: {
+                width: 200,
+                padding: 0,
+                borderWidth: 15,
+                margin: 0
+            },
+            controls: [
+                { 
+                    key: "borderWidth",
+                    label: "border",
+                    min: 1,
+                    max: 20,
+                    value: 1
+                }
+            ]
+        },
+        {
+            level: 5,
+            target: {
+                width: 200,
+                padding: 30,
+                borderWidth: 1,
+                margin: 20
+            },
+            controls: [
+                { 
+                    key: "padding",
+                    label: "padding",
+                    min: 0,
+                    max: 50,
+                    value: 0 
+                },
+                { 
+                    key: "margin" ,
+                    label: "margin",
+                    min: 0,
+                    max: 50,
+                    value: 0
+                }
+            ]
+        },
+        {
+            level: 6,
+            target: {
+                width: 200,
+                padding: 5,
+                borderWidth: 0,
+                margin: 10
+            },
+            controls: [
+                { 
+                    key: "padding",
+                    label: "padding",
+                    min: 0,
+                    max: 150,
+                    value: 50
+                },
+                { 
+                    key: "borderWidth" ,
+                    label: "border",
+                    min: 0,
+                    max: 15,
+                    value: 10
+                }
+            ]
+        },
+        {
+            level: 7,
+            target: {
+                width: 200,
+                padding: 25,
+                borderWidth: 4,
+                margin: 10
+            },
+            controls: [
+                { 
+                    key: "padding",
+                    label: "padding",
+                    min: 0,
+                    max: 50,
+                    value: 0 
+                },
+                { 
+                    key: "borderWidth" ,
+                    label: "border",
+                    min: 0,
+                    max: 15,
+                    value: 0
+                },
+                { 
+                    key: "margin" ,
+                    label: "margin",
+                    min: 0,
+                    max: 50,
+                    value: 40
+                }
+            ]
+        },
+        {
+            level: 8,
+            target: {
+                width: 200,
+                padding: 30,
+                margin: 20,
+                borderWidth: 10
+            },
+            controls: [
+                { 
+                    key: "width",
+                    label: "width",
+                    min: 1,
+                    max: 250,
+                    value: 50
+                },
+                { 
+                    key: "padding",
+                    label: "padding",
+                    min: 0,
+                    max: 35,
+                    value: 0 
+                },
+                { 
+                    key: "margin" ,
+                    label: "margin",
+                    min: 0,
+                    max: 35,
+                    value: 0
+                },
+                { 
+                    key: "borderWidth",
+                    label: "border",
+                    min: 0,
+                    max: 35,
+                    value: 0
+                },
+            ]
+        }
+    ]
+
+    BoxModelMaster.initialize({
+        data: data
+    });
+
+  });
+</script>
